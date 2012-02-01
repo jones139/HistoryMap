@@ -227,7 +227,7 @@ var popup = {
 	var website = false;
 	if(entity_obj.website !== undefined)
 	{
-		website = entity_obj.website;
+	    website = entity_obj.website;
 	}
 	else if(entity_obj.url !== undefined)
 	{
@@ -237,6 +237,17 @@ var popup = {
 		output.push(['<p class="website"><a href=\"',website,
 		'\" target=\"_blank\">',website,'</a></p>'].join(''));
 	}
+
+	if(entity_obj.historic !== undefined) {
+	    output.push(['<p>historic = ',entity_obj.historic,'</p>'].join(''));
+	}
+	if(entity_obj.civilization !== undefined) {
+	    output.push(['<p>civilization = ',entity_obj.civilization,'</p>'].join(''));
+	}
+	if(entity_obj.period !== undefined) {
+	    output.push(['<p>period = ',entity_obj.period,'</p>'].join(''));
+	}
+
 
 	output.push(['<p class="edit">#<a href="http://www.openstreetmap.org/browse/',
 		entity_obj.type,'/',
